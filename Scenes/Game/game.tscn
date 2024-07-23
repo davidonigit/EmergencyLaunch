@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://di84ll03n5sbb"]
+
+[ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_tyuq8"]
+[ext_resource type="PackedScene" uid="uid://dfah222300kmu" path="res://Scenes/Rocket/rocket.tscn" id="2_dglli"]
+[ext_resource type="Script" path="res://Scenes/Camera/Camera2D.gd" id="3_cu80d"]
+
+[sub_resource type="Gradient" id="Gradient_t3rp0"]
+offsets = PackedFloat32Array(0, 0.876623, 0.974026)
+colors = PackedColorArray(0, 0.0901961, 0.121569, 1, 0.517647, 0.376471, 0.458824, 1, 1, 0.607843, 0.258824, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nk77b"]
+gradient = SubResource("Gradient_t3rp0")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6501x"]
+size = Vector2(800, 20)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_tyuq8")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_top = -23208.0
+offset_right = 11306.0
+offset_bottom = 610.0
+texture = SubResource("GradientTexture2D_nk77b")
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(0, -24)
+
+[node name="Ground" type="StaticBody2D" parent="World"]
+position = Vector2(0, 600)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground"]
+position = Vector2(400, 0)
+shape = SubResource("RectangleShape2D_6501x")
+
+[node name="GroundColor" type="ColorRect" parent="World"]
+offset_top = 590.0
+offset_right = 11342.0
+offset_bottom = 976.0
+color = Color(0.215686, 0.588235, 0.203922, 1)
+
+[node name="Rocket" parent="." instance=ExtResource("2_dglli")]
+position = Vector2(401, 564)
+
+[node name="Camera2D" type="Camera2D" parent="Rocket"]
+limit_bottom = 600
+script = ExtResource("3_cu80d")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "VELOCIDADE:
+"

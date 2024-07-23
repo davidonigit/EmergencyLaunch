@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://di84ll03n5sbb"]
+
+[ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_tyuq8"]
+[ext_resource type="PackedScene" uid="uid://dfah222300kmu" path="res://Scenes/Rocket/rocket.tscn" id="2_dglli"]
+[ext_resource type="Script" path="res://Scenes/Camera/Camera2D.gd" id="3_cu80d"]
+
+[sub_resource type="Gradient" id="Gradient_t3rp0"]
+colors = PackedColorArray(0, 0, 0, 1, 0.402537, 0.409986, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nk77b"]
+gradient = SubResource("Gradient_t3rp0")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6501x"]
+size = Vector2(800, 20)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_tyuq8")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_top = -17500.0
+offset_right = 22794.0
+offset_bottom = 610.0
+texture = SubResource("GradientTexture2D_nk77b")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(400, 0)
+shape = SubResource("RectangleShape2D_6501x")
+
+[node name="Rocket" parent="." instance=ExtResource("2_dglli")]
+position = Vector2(400, 552)
+
+[node name="Camera2D" type="Camera2D" parent="Rocket"]
+script = ExtResource("3_cu80d")

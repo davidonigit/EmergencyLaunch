@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfah222300kmu"]
+
+[ext_resource type="Script" path="res://Scenes/Rocket/rocket.gd" id="1_s1opv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnpfw"]
+size = Vector2(20, 180)
+
+[node name="Rocket" type="RigidBody2D"]
+script = ExtResource("1_s1opv")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.858824, 0.196078, 0.196078, 1)
+polygon = PackedVector2Array(0, -182, -26, -133, -26, -43, -50, 0, 50, 0, 25, -43, 25, -135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -90)
+shape = SubResource("RectangleShape2D_rnpfw")
