@@ -7,7 +7,7 @@ extends RigidBody2D
 var MAX_SPEED = -1500
 var speed = 10
 var DIRECTION = Vector2(0.01, -2)
-var fuel: float = 20.0
+var fuel: float = 100.0
 var counter_force:Vector2
 var engine_on = true
 # Called when the node enters the scene tree for the first time.
