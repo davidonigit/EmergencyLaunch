@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://di84ll03n5sbb"]
+[gd_scene load_steps=12 format=3 uid="uid://di84ll03n5sbb"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_tyuq8"]
 [ext_resource type="PackedScene" uid="uid://dfah222300kmu" path="res://Scenes/Rocket/rocket.tscn" id="2_dglli"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://de18gd6p630fo" path="res://Sprites/Clouds/cloud2.png" id="5_25okc"]
 [ext_resource type="Texture2D" uid="uid://ccpihd20qwyx5" path="res://Sprites/Clouds/cloud3.png" id="6_4v8ci"]
 [ext_resource type="Texture2D" uid="uid://blh01lsheveyw" path="res://Sprites/Clouds/cloud4.png" id="7_jxk3l"]
+[ext_resource type="PackedScene" uid="uid://btqs2fbbcdjua" path="res://Scenes/Hud/hud.tscn" id="8_a8l4b"]
 
 [sub_resource type="Gradient" id="Gradient_t3rp0"]
 offsets = PackedFloat32Array(0, 0.876623, 0.974026)
@@ -132,10 +133,8 @@ position = Vector2(401, 564)
 limit_bottom = 600
 script = ExtResource("3_cu80d")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" parent="." instance=ExtResource("8_a8l4b")]
 
-[node name="Label" type="Label" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "VELOCIDADE:
-"
+[node name="Timer" type="Timer" parent="."]
+wait_time = 24.1
+one_shot = true

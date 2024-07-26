@@ -1,15 +1,16 @@
 extends Node2D
 @onready var camera = $Rocket/Camera2D
-@onready var label = $HUD/Label
 @onready var rocket = $Rocket
+@onready var hud = $HUD
+@onready var timer = $Timer
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	timer.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#camera.apply_shake()
-	label.text = "VELOCIDADE:\n"+str(rocket.linear_velocity)
+	var rocket_velocity = round(rocket.linear_velocity.y)
+	var time_left = timer.time_left
+	var rocket_fuel = rocket.fuel
+	hud.update_stats(rocket_velocity, time_left, rocket_fuel)
