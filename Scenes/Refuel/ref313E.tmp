@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhrva1ckqtvpp"]
+
+[ext_resource type="Texture2D" uid="uid://ca5cufdou0e2j" path="res://Sprites/Hud/hud_cicle.png" id="1_7ogcv"]
+[ext_resource type="Script" path="res://Scenes/Refuel/refuel.gd" id="1_27qv7"]
+[ext_resource type="Texture2D" uid="uid://mo6yjm6hthwk" path="res://icon.svg" id="2_424hs"]
+
+[node name="Refuel" type="Node2D"]
+position = Vector2(91, 76)
+script = ExtResource("1_27qv7")
+
+[node name="Circle" type="Sprite2D" parent="."]
+texture = ExtResource("1_7ogcv")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(-0.0325033, 0.4)
+texture = ExtResource("2_424hs")
+offset = Vector2(0, -64)
+
+[node name="HitButton" type="Sprite2D" parent="."]
+position = Vector2(97, -2.38419e-07)
+scale = Vector2(0.138672, 0.123047)
+texture = ExtResource("2_424hs")
+
+[node name="Spawnpoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(44, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(40, 19)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(22, 39)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(0, 45)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(-22, 39)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(-41, 18)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(-44, 0)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(-38, -22)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(-22, -37)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(0, -43)
+
+[node name="Marker2D11" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(21, -38)
+
+[node name="Marker2D12" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(38, -22)

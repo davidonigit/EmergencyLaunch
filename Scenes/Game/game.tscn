@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://di84ll03n5sbb"]
+[gd_scene load_steps=13 format=3 uid="uid://di84ll03n5sbb"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_tyuq8"]
 [ext_resource type="PackedScene" uid="uid://dfah222300kmu" path="res://Scenes/Rocket/rocket.tscn" id="2_dglli"]
 [ext_resource type="Script" path="res://Scenes/Camera/Camera2D.gd" id="3_cu80d"]
-[ext_resource type="Texture2D" uid="uid://da7eaux0i2vso" path="res://cloud1.png" id="4_g73j4"]
+[ext_resource type="Texture2D" uid="uid://da7eaux0i2vso" path="res://Sprites/Clouds/cloud1.png" id="4_g73j4"]
 [ext_resource type="Texture2D" uid="uid://de18gd6p630fo" path="res://Sprites/Clouds/cloud2.png" id="5_25okc"]
 [ext_resource type="Texture2D" uid="uid://ccpihd20qwyx5" path="res://Sprites/Clouds/cloud3.png" id="6_4v8ci"]
 [ext_resource type="Texture2D" uid="uid://blh01lsheveyw" path="res://Sprites/Clouds/cloud4.png" id="7_jxk3l"]
 [ext_resource type="PackedScene" uid="uid://btqs2fbbcdjua" path="res://Scenes/Hud/hud.tscn" id="8_a8l4b"]
+[ext_resource type="PackedScene" uid="uid://dhrva1ckqtvpp" path="res://Scenes/Refuel/refuel.tscn" id="9_scu88"]
 
 [sub_resource type="Gradient" id="Gradient_t3rp0"]
-offsets = PackedFloat32Array(0, 0.876623, 0.974026)
+offsets = PackedFloat32Array(0.441558, 0.967532, 1)
 colors = PackedColorArray(0, 0.0901961, 0.121569, 1, 0.517647, 0.376471, 0.458824, 1, 1, 0.607843, 0.258824, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nk77b"]
@@ -18,30 +19,22 @@ gradient = SubResource("Gradient_t3rp0")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6501x"]
-size = Vector2(800, 20)
+size = Vector2(4873, 142)
 
 [node name="Game" type="Node2D"]
+position = Vector2(3, 0)
 script = ExtResource("1_tyuq8")
 
 [node name="Background" type="TextureRect" parent="."]
-offset_top = -23208.0
+offset_top = -26089.0
 offset_right = 11306.0
 offset_bottom = 610.0
 texture = SubResource("GradientTexture2D_nk77b")
-metadata/_edit_lock_ = true
 
 [node name="World" type="Node2D" parent="."]
 position = Vector2(0, -24)
 
 [node name="Ground" type="Node2D" parent="World"]
-
-[node name="GroundBody" type="StaticBody2D" parent="World/Ground"]
-position = Vector2(0, 600)
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground/GroundBody"]
-position = Vector2(400, 0)
-shape = SubResource("RectangleShape2D_6501x")
 
 [node name="GroundColor" type="ColorRect" parent="World/Ground"]
 offset_top = 590.0
@@ -49,85 +42,93 @@ offset_right = 11342.0
 offset_bottom = 976.0
 color = Color(0.215686, 0.588235, 0.203922, 1)
 
+[node name="GroundBody" type="StaticBody2D" parent="World/Ground"]
+position = Vector2(0, 600)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground/GroundBody"]
+position = Vector2(2436.5, 61)
+shape = SubResource("RectangleShape2D_6501x")
+
 [node name="Clouds" type="Node2D" parent="World"]
 
 [node name="Cloud1" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(828, -457)
+position = Vector2(790, -389)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_g73j4")
 
 [node name="Cloud6" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(1257, -1512)
+position = Vector2(1552, -1800)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_g73j4")
 
 [node name="Cloud15" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(389, -2199)
+position = Vector2(1021, -2015)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_g73j4")
 
 [node name="Cloud5" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(216, -1557)
+position = Vector2(1825, -2137)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_g73j4")
 
 [node name="Cloud2" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(303, -402)
+position = Vector2(269, -342)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_25okc")
 
 [node name="Cloud7" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(1723, -432)
+position = Vector2(570, -606)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_25okc")
 
 [node name="Cloud3" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(1382, -302)
+position = Vector2(1204, -222)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_4v8ci")
 
 [node name="Cloud8" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(585, -248)
+position = Vector2(640, -189)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_4v8ci")
 
 [node name="Cloud10" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(1489, -1898)
-scale = Vector2(0.2, 0.2)
+position = Vector2(1778, -2098)
+scale = Vector2(0.205096, 0.2)
 texture = ExtResource("6_4v8ci")
 
 [node name="Cloud4" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(1303, -595)
+position = Vector2(1244, -595)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Cloud11" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(2072, -1603)
+position = Vector2(1865, -1701)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Cloud14" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(917, -2041)
+position = Vector2(1201, -1717)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Cloud9" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(623, -1690)
+position = Vector2(1715, -1798)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Cloud12" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(2103, -2310)
+position = Vector2(1986, -2094)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Cloud13" type="Sprite2D" parent="World/Clouds"]
-position = Vector2(1355, -2506)
+position = Vector2(1600, -2074)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Rocket" parent="." instance=ExtResource("2_dglli")]
-position = Vector2(401, 564)
+position = Vector2(478, 564)
 
 [node name="Camera2D" type="Camera2D" parent="Rocket"]
 limit_bottom = 600
@@ -135,6 +136,13 @@ script = ExtResource("3_cu80d")
 
 [node name="HUD" parent="." instance=ExtResource("8_a8l4b")]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Refuel" parent="HUD" instance=ExtResource("9_scu88")]
+position = Vector2(400, 300)
+
+[node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 24.1
 one_shot = true
+
+[connection signal="engine_off" from="Rocket" to="." method="_on_rocket_engine_off"]
+[connection signal="refuel" from="HUD/Refuel" to="." method="_on_refuel_refuel"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_timer_timeout"]

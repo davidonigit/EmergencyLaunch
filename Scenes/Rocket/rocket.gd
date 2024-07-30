@@ -6,29 +6,35 @@ extends RigidBody2D
 @onready var accelaration_timer = $AccelarationTimer
 @onready var anti_torque_timer = $AntiTorqueTimer
 
-const MAX_SPEED = -2000
-var speed = 9
+const MAX_SPEED = -2200
+var speed:float = 9.0
 const DIRECTION = Vector2(0.05, -2)
-var fuel: float = 100.0
+var fuel: float = 0.0
 var counter_force:Vector2
-var engine_on = true
+var engine_on:bool = false
 
-
-func _ready():
-	anti_torque_timer.start()
-	add_constant_torque(50)
-	accelaration_timer.start()
+signal engine_off()
 
 func _physics_process(delta):
-	if fuel > 0:
-		if linear_velocity.y > MAX_SPEED:
-			apply_central_impulse(DIRECTION * speed)
-		fuel -= 7 * delta
-		print(fuel)
-	else:
-		if engine_on:
-			animation_player.play("engine_off")
-			engine_on = false
+	if engine_on:
+		if fuel > 0:
+			if linear_velocity.y > MAX_SPEED:
+				apply_central_impulse(DIRECTION * speed)
+			fuel -= 7 * delta
+		else:
+			if engine_on:
+				engine_off.emit()
+				animation_player.play("engine_off")
+				engine_on = false
+
+
+func start_engine():
+	add_constant_torque(50)
+	anti_torque_timer.start()
+	accelaration_timer.start()
+	fire_particles.emitting = true
+	point_light.enabled = true
+	engine_on = true
 
 
 func _on_anti_torque_timer_timeout():

@@ -9,4 +9,3 @@ func update_stats(velocity, time, fuel):
 	velocity_label.text = str(-velocity)
 	time_left_label.text = str(time).pad_decimals(2)
 	fuel_bar.value = fuel
-	

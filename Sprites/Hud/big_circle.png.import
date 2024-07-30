@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5v6uf1iwddrx"
-path="res://.godot/imported/rocket.png-8fe61e0c276cd616ca9cc432470ebc07.ctex"
+uid="uid://253fcbuxrler"
+path="res://.godot/imported/big_circle.png-21507a60b6d9bb1100a8f16471bee06c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/rocket.png"
-dest_files=["res://.godot/imported/rocket.png-8fe61e0c276cd616ca9cc432470ebc07.ctex"]
+source_file="res://Sprites/Hud/big_circle.png"
+dest_files=["res://.godot/imported/big_circle.png-21507a60b6d9bb1100a8f16471bee06c.ctex"]
 
 [params]
 
