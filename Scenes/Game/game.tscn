@@ -22,10 +22,11 @@ fill_to = Vector2(0, 1)
 size = Vector2(4873, 142)
 
 [node name="Game" type="Node2D"]
-position = Vector2(3, 0)
+position = Vector2(3, -566)
 script = ExtResource("1_tyuq8")
 
 [node name="Background" type="TextureRect" parent="."]
+offset_left = -4271.0
 offset_top = -26089.0
 offset_right = 11306.0
 offset_bottom = 610.0
@@ -38,6 +39,7 @@ position = Vector2(0, -24)
 [node name="Ground" type="Node2D" parent="World"]
 
 [node name="GroundColor" type="ColorRect" parent="World/Ground"]
+offset_left = -4211.0
 offset_top = 590.0
 offset_right = 11342.0
 offset_bottom = 976.0
@@ -129,10 +131,10 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
 [node name="Rocket" parent="." instance=ExtResource("2_dglli")]
-position = Vector2(478, 564)
+position = Vector2(478, 566)
 
 [node name="Camera2D" type="Camera2D" parent="Rocket"]
-limit_bottom = 600
+limit_bottom = 20
 script = ExtResource("3_cu80d")
 
 [node name="HUD" parent="." instance=ExtResource("8_a8l4b")]
