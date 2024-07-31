@@ -40,15 +40,15 @@ vertical_alignment = 1
 [node name="Circle" type="Sprite2D" parent="."]
 texture = ExtResource("3_n8c6q")
 
+[node name="FuelIcon" type="Sprite2D" parent="."]
+position = Vector2(0, -96)
+texture = ExtResource("5_b01b7")
+
 [node name="Pointer" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 0, 1)
 scale = Vector2(-0.0325033, 0.766657)
 texture = ExtResource("2_424hs")
 offset = Vector2(0, -64)
-
-[node name="FuelIcon" type="Sprite2D" parent="."]
-position = Vector2(0, -96)
-texture = ExtResource("5_b01b7")
 
 [node name="Spawnpoints" type="Node2D" parent="."]
 

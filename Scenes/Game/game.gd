@@ -5,6 +5,7 @@ extends Node2D
 @onready var gameover_timer = $GameOverTimer
 @onready var refuel = $HUD/Refuel
 var engine_on:bool = false
+var launched:bool = false
 
 func _ready():
 	gameover_timer.start()
@@ -18,7 +19,8 @@ func _process(_delta):
 	hud.update_stats(rocket_velocity, time_left, rocket_fuel)
 	
 	if Input.is_action_just_pressed("lauch"):
-		launch_rocket()
+		if not launched:
+			launch_rocket()
 
 
 func _on_refuel_refuel(value:int):
@@ -26,6 +28,7 @@ func _on_refuel_refuel(value:int):
 
 
 func launch_rocket():
+	launched = true
 	engine_on = true
 	refuel.hide()
 	rocket.start_engine()
@@ -37,4 +40,6 @@ func _on_rocket_engine_off():
 
 
 func _on_timer_timeout():
-	pass
+	rocket.explode()
+	var tween = create_tween()
+	tween.tween_property(camera, "zoom", Vector2(0.3,0.3), 2)
