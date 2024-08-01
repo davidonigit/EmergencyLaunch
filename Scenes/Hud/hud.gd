@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var game_over_label = $GameoverPanel/VBoxContainer/GameOver
 @onready var reached_hight_label = $GameoverPanel/VBoxContainer/ReachedHight
 @onready var gameover_panel = $GameoverPanel
+@onready var highscore_label = $GameoverPanel/VBoxContainer/Highscore
 
 
 func update_stats(velocity, time, fuel, hight):
@@ -18,24 +19,31 @@ func update_stats(velocity, time, fuel, hight):
 	hight_label.text = str(hight)
 
 
-func gameover_menu(hight:int, ground:bool):
+func gameover_menu(hight:int, ground_hit:bool):
 	gameover_panel.show()
-	if ground:
+	if ground_hit:
 		game_over_label.text = 'GAME OVER'
 		body_label.text = 'you hit the ground!'
-		reached_hight_label.text += '0 meters'
+		reached_hight_label.text = '0 meters'
+		highscore_label.hide()
 	else:
 		if hight < 100:
 			body_label.text = 'danger explosion hight'
-		elif hight < 1000:
+		elif hight < 3000:
 			body_label.text = 'bad explosion hight'
-		elif hight < 5000:
+		elif hight < 8000:
 			body_label.text = 'good explosion hight'
-		elif hight < 10000:
+		elif hight < 15000:
 			body_label.text = 'great explosion hight'
 		else:
 			body_label.text = 'amazing explosion hight'
-
+			
+		game_over_label.text = 'GAME OVER'
+		reached_hight_label.text = str(hight)+' meters'
+		if GameController.test_highscore(hight):
+			highscore_label.show()
+		else:
+			highscore_label.hide()
 
 func _on_try_again_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Game/game.tscn")

@@ -740,6 +740,8 @@ alpha_curve = SubResource("CurveTexture_x68nm")
 [node name="Rocket" type="RigidBody2D"]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_yec5g")
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_s1opv")
 
 [node name="Rocket" type="Sprite2D" parent="."]

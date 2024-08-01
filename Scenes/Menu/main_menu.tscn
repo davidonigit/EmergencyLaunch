@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8c5tu3ax5sse"]
+[gd_scene load_steps=14 format=3 uid="uid://b8c5tu3ax5sse"]
 
 [ext_resource type="FontFile" uid="uid://c7aphcssgi1bd" path="res://Fonts&Themes/Lonely Coffee.ttf" id="1_a0skb"]
 [ext_resource type="Script" path="res://Scenes/Menu/main_menu.gd" id="1_gi40v"]
 [ext_resource type="Theme" uid="uid://c7w67s3yqs8tp" path="res://Fonts&Themes/main_theme.tres" id="1_xrn4f"]
 [ext_resource type="Texture2D" uid="uid://5v6uf1iwddrx" path="res://Sprites/Rocket/rocket.png" id="2_44vgp"]
+[ext_resource type="Texture2D" uid="uid://mvrxt7xfk7e3" path="res://Sprites/Hud/fuel_icon.png" id="4_hkiw5"]
 
 [sub_resource type="Gradient" id="Gradient_fua71"]
 offsets = PackedFloat32Array(0.415584, 1)
@@ -13,6 +14,166 @@ colors = PackedColorArray(0.517647, 0.376471, 0.458824, 1, 0, 0.0901961, 0.12156
 gradient = SubResource("Gradient_fua71")
 fill = 1
 
+[sub_resource type="Animation" id="Animation_r8qth"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CreditsMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tutorial Menu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4x8ev"]
+resource_name = "credits_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-800, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CreditsMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s4f4m"]
+resource_name = "initial_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-800, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CreditsMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(800, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vcbtw"]
+resource_name = "initial_to_tutorial"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-800, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dwwva"]
+resource_name = "tutorial_to_initial"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-800, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(800, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rnv80"]
+_data = {
+"RESET": SubResource("Animation_r8qth"),
+"credits_to_initial": SubResource("Animation_s4f4m"),
+"initial_to_credits": SubResource("Animation_4x8ev"),
+"initial_to_tutorial": SubResource("Animation_vcbtw"),
+"tutorial_to_initial": SubResource("Animation_dwwva")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -20,18 +181,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_xrn4f")
 script = ExtResource("1_gi40v")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="InitialMenu" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.517647, 0.376471, 0.458824, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="InitialMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,21 +201,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_qict2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="InitialMenu"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 37.0
-offset_top = -247.0
-offset_right = 341.0
-offset_bottom = 191.0
+offset_left = 25.0
+offset_top = -223.0
+offset_right = 329.0
+offset_bottom = 215.0
 grow_vertical = 2
 theme = ExtResource("1_xrn4f")
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="InitialMenu/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.937255, 0.945098, 0.952941, 1)
+theme = ExtResource("1_xrn4f")
 theme_override_colors/font_shadow_color = Color(0, 0.0901961, 0.121569, 1)
 theme_override_fonts/font = ExtResource("1_a0skb")
 theme_override_font_sizes/font_size = 50
@@ -66,32 +227,199 @@ text = "EMERGENCY
 "
 vertical_alignment = 1
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Play" type="Button" parent="InitialMenu/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Play"
 alignment = 0
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="Tutorial" type="Button" parent="InitialMenu/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "tutorial"
+alignment = 0
+
+[node name="Credits" type="Button" parent="InitialMenu/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Credits"
 alignment = 0
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="InitialMenu/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Quit"
 alignment = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CreditsMenu" type="Control" parent="."]
+custom_minimum_size = Vector2(800, 600)
+anchors_preset = 0
+offset_left = 800.0
+offset_right = 1600.0
+offset_bottom = 600.0
+
+[node name="ColorRect" type="ColorRect" parent="CreditsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0.0901961, 0.121569, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsMenu"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -300.0
+offset_right = 825.0
+offset_bottom = 300.0
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Credits" type="Label" parent="CreditsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "credits
+"
+
+[node name="Roles" type="Label" parent="CreditsMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Game designer/programmer/artist:
+
+"
+
+[node name="Daviduarte" type="Label" parent="CreditsMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.607843, 0.258824, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "    Davi duarte
+
+
+"
+
+[node name="Freepik" type="Label" parent="CreditsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "rocket/clouds sprite:
+designed by freepik
+"
+
+[node name="CreditsToInitial" type="Button" parent="CreditsMenu"]
+layout_mode = 2
+offset_left = 459.0
+offset_top = 471.0
+offset_right = 708.0
+offset_bottom = 507.0
+text = "back to menu"
+
+[node name="Tutorial Menu" type="Control" parent="."]
+custom_minimum_size = Vector2(800, 600)
+anchors_preset = 0
+offset_left = 800.0
+offset_right = 1600.0
+offset_bottom = 600.0
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0.0901961, 0.121569, 1)
+
+[node name="FuelIcon" type="Sprite2D" parent="Tutorial Menu/ColorRect"]
+position = Vector2(667, 191)
+texture = ExtResource("4_hkiw5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial Menu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -300.0
+offset_right = 734.0
+offset_bottom = 300.0
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Tutorial" type="Label" parent="Tutorial Menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Tutorial"
+
+[node name="Refuelsystem" type="Label" parent="Tutorial Menu/VBoxContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.607843, 0.258824, 1)
+theme_override_font_sizes/font_size = 27
+text = "Refuel system:"
+autowrap_mode = 2
+
+[node name="FuelBody" type="Label" parent="Tutorial Menu/VBoxContainer"]
+custom_minimum_size = Vector2(100, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "press (\"A\" | \"d\" | \"left\" | \"right\")  to hit the orange icon and fuel your rocket when the red pointer is over it
+"
+autowrap_mode = 2
+
+[node name="Launch" type="Label" parent="Tutorial Menu/VBoxContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.607843, 0.258824, 1)
+theme_override_font_sizes/font_size = 27
+text = "launch:"
+autowrap_mode = 2
+
+[node name="LaunchBody" type="Label" parent="Tutorial Menu/VBoxContainer"]
+custom_minimum_size = Vector2(100, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "press (\"W\" | \"Up\") to launch the rocket
+"
+autowrap_mode = 2
+
+[node name="TutorialToInitial" type="Button" parent="Tutorial Menu"]
+layout_mode = 2
+offset_left = 459.0
+offset_top = 471.0
+offset_right = 708.0
+offset_bottom = 507.0
+text = "back to menu"
+
+[node name="Rocket" type="Sprite2D" parent="."]
 position = Vector2(524, 107)
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_44vgp")
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rnv80")
+}
+
+[connection signal="pressed" from="InitialMenu/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="InitialMenu/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="InitialMenu/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="InitialMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CreditsMenu/CreditsToInitial" to="." method="_on_credits_to_initial_pressed"]
+[connection signal="pressed" from="Tutorial Menu/TutorialToInitial" to="." method="_on_tutorial_to_initial_pressed"]

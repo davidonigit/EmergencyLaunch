@@ -37,6 +37,7 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -24)
 
 [node name="Ground" type="Node2D" parent="World"]
+position = Vector2(0, -1)
 
 [node name="GroundColor" type="ColorRect" parent="World/Ground"]
 offset_left = -4211.0
