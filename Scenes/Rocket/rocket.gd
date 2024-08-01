@@ -13,10 +13,12 @@ const MAX_SPEED = -2200
 var speed:float = 9.0
 const DIRECTION = Vector2(0.05, -2)
 var fuel: float = 0.0
-var counter_force:Vector2
 var engine_on:bool = false
 
 signal engine_off()
+
+func _ready():
+	$SmokeAudio.play()
 
 func _physics_process(delta):
 	if engine_on:
@@ -31,8 +33,9 @@ func _physics_process(delta):
 				engine_on = false
 
 
-
 func start_engine():
+	$SmokeAudio.stop()
+	$EngineAudio.play()
 	add_constant_torque(50)
 	anti_torque_timer.start()
 	accelaration_timer.start()
@@ -52,7 +55,9 @@ func _on_accelaration_timer_timeout():
 
 
 func explode():
+	$ExplosionAudio.play()
 	if engine_on:
+		$EngineAudio.stop()
 		engine_off.emit()
 		engine_on = false
 	animation_player.play("explosion")

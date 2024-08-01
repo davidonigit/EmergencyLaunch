@@ -3,6 +3,7 @@ extends Node2D
 @onready var rocket = $Rocket
 @onready var hud = $HUD
 @onready var gameover_timer = $GameOverTimer
+@onready var alarm_timer = $FiveSecondsTimer/AlarmTimer
 @onready var refuel = $HUD/Refuel
 
 var engine_on:bool = false
@@ -12,7 +13,9 @@ var rocket_velocity = 0
 var rocket_hight = 0
 
 func _ready():
-	gameover_timer.start()
+	AudioManager.music.stop()
+	$WindSFX.play()
+
 
 func _process(_delta):
 	if engine_on: 
@@ -55,7 +58,9 @@ func _on_rocket_engine_off():
 	engine_on = false
 
 
-func _on_timer_timeout():
+func _on_gameover_timer_timeout():
+	refuel.hide()
+	alarm_timer.stop()
 	explode_rocked(false)
 
 
@@ -66,3 +71,11 @@ func explode_rocked(grounded:bool):
 	var tween = create_tween()
 	tween.tween_property(camera, "zoom", Vector2(0.3,0.3), 1)
 	hud.gameover_menu(rocket_hight, grounded)
+
+
+func _on_five_seconds_timer_timeout():
+	alarm_timer.start()
+
+
+func _on_alarm_timer_timeout():
+	AudioManager.alarm.play()

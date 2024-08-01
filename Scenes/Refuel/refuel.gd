@@ -59,14 +59,17 @@ func check_hit(p_rotation:float):
 				check = true
 	if check:
 		hit()
+		
 	else:
 		miss()
 
 
 func hit():
+	$HitAudio.play()
 	refuel.emit(10)
 	respawn_button()
 
 
 func miss():
+	$MissAudio.play()
 	refuel.emit(-5)

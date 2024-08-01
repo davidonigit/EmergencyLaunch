@@ -46,8 +46,10 @@ func gameover_menu(hight:int, ground_hit:bool):
 			highscore_label.hide()
 
 func _on_try_again_pressed():
+	AudioManager.click_sound.play()
 	get_tree().change_scene_to_file("res://Scenes/Game/game.tscn")
 
 
 func _on_menu_pressed():
+	AudioManager.click_sound.play()
 	get_tree().change_scene_to_file("res://Scenes/Menu/main_menu.tscn")

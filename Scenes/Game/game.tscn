@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://di84ll03n5sbb"]
+[gd_scene load_steps=14 format=3 uid="uid://di84ll03n5sbb"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_tyuq8"]
 [ext_resource type="PackedScene" uid="uid://dfah222300kmu" path="res://Scenes/Rocket/rocket.tscn" id="2_dglli"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://blh01lsheveyw" path="res://Sprites/Clouds/cloud4.png" id="7_jxk3l"]
 [ext_resource type="PackedScene" uid="uid://btqs2fbbcdjua" path="res://Scenes/Hud/hud.tscn" id="8_a8l4b"]
 [ext_resource type="PackedScene" uid="uid://dhrva1ckqtvpp" path="res://Scenes/Refuel/refuel.tscn" id="9_scu88"]
+[ext_resource type="AudioStream" uid="uid://clfly2k0ptts1" path="res://Audio/Wind/wind.mp3" id="10_y8v1u"]
 
 [sub_resource type="Gradient" id="Gradient_t3rp0"]
 offsets = PackedFloat32Array(0.168831, 0.967532, 1)
@@ -106,6 +107,216 @@ position = Vector2(1244, -595)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
+[node name="Cloud16" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2108.1, -396.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud17" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(1587.1, -349.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud18" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(1888.1, -613.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud19" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2522.1, -229.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud20" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(1958.1, -196.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud21" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2562.1, -602.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud22" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3405.1, -403.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud23" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2884.1, -356.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud24" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3185.1, -620.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud25" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3819.1, -236.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud26" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3255.1, -203.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud27" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3859.1, -609.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud28" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-492.9, -381.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud29" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1013.9, -334.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud30" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-712.9, -598.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud31" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-78.9, -214.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud32" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-642.9, -181.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud33" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-38.9, -587.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud34" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1789.9, -388.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud35" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-2310.9, -341.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud36" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-2009.9, -605.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud37" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1375.9, -221.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud38" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1939.9, -188.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud39" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1335.9, -594.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud40" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-3049.9, -367.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud41" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-3570.9, -320.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud42" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-3269.9, -584.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud43" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-2635.9, -200.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud44" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-3199.9, -167.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud45" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-2595.9, -573.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud46" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4702.1, -410.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud47" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4181.1, -363.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud48" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4482.1, -627.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud49" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5116.1, -243.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud50" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4552.1, -210.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud51" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5156.1, -616.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud52" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5919.1, -431.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud53" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5398.1, -384.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud54" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5699.1, -648.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_25okc")
+
+[node name="Cloud55" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(6333.1, -264.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud56" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5769.1, -231.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud57" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(6373.1, -637.6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
 [node name="Cloud11" type="Sprite2D" parent="World/Clouds"]
 position = Vector2(1396.6, -1701.1)
 scale = Vector2(0.2, 0.2)
@@ -131,6 +342,231 @@ position = Vector2(1131.6, -2074.1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_jxk3l")
 
+[node name="Cloud58" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-148.4, -2041.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud59" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-679.4, -2256.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud60" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(124.6, -2378.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud61" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(77.6, -2339.1)
+scale = Vector2(0.205096, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud62" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(164.6, -1942.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud63" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-499.4, -1958.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud64" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(14.6001, -2039.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud65" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(285.6, -2335.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud66" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-100.4, -2315.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud67" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2391.6, -2219.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud68" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(1860.6, -2434.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud69" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2664.6, -2556.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud70" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2617.6, -2517.1)
+scale = Vector2(0.205096, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud71" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2704.6, -2120.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud72" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2040.6, -2136.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud73" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2554.6, -2217.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud74" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2825.6, -2513.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud75" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(2439.6, -2493.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud76" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3597.6, -2016.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud77" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3066.6, -2231.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud78" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3870.6, -2353.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud79" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3823.6, -2314.1)
+scale = Vector2(0.205096, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud80" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3910.6, -1917.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud81" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3246.6, -1933.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud82" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3760.6, -2014.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud83" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4031.6, -2310.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud84" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(3645.6, -2290.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud85" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1508.4, -1966.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud86" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-2039.4, -2181.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud87" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1235.4, -2303.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud88" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1282.4, -2264.1)
+scale = Vector2(0.205096, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud89" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1195.4, -1867.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud90" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1859.4, -1883.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud91" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1345.4, -1964.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud92" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1074.4, -2260.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud93" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(-1460.4, -2240.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud94" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4700.6, -1885.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud95" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4169.6, -2100.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud96" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4973.6, -2222.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_g73j4")
+
+[node name="Cloud97" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4926.6, -2183.1)
+scale = Vector2(0.205096, 0.2)
+texture = ExtResource("6_4v8ci")
+
+[node name="Cloud98" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5013.6, -1786.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud99" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4349.6, -1802.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud100" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4863.6, -1883.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud101" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(5134.6, -2179.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
+[node name="Cloud102" type="Sprite2D" parent="World/Clouds"]
+position = Vector2(4748.6, -2159.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jxk3l")
+
 [node name="Rocket" parent="." instance=ExtResource("2_dglli")]
 position = Vector2(478, 566)
 
@@ -146,7 +582,21 @@ position = Vector2(400, 300)
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 24.1
 one_shot = true
+autostart = true
+
+[node name="FiveSecondsTimer" type="Timer" parent="."]
+wait_time = 18.1
+one_shot = true
+autostart = true
+
+[node name="AlarmTimer" type="Timer" parent="FiveSecondsTimer"]
+
+[node name="WindSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_y8v1u")
+volume_db = -5.0
 
 [connection signal="engine_off" from="Rocket" to="." method="_on_rocket_engine_off"]
 [connection signal="refuel" from="HUD/Refuel" to="." method="_on_refuel_refuel"]
-[connection signal="timeout" from="GameOverTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_gameover_timer_timeout"]
+[connection signal="timeout" from="FiveSecondsTimer" to="." method="_on_five_seconds_timer_timeout"]
+[connection signal="timeout" from="FiveSecondsTimer/AlarmTimer" to="." method="_on_alarm_timer_timeout"]
