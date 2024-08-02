@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://di84ll03n5sbb"]
+[gd_scene load_steps=15 format=3 uid="uid://di84ll03n5sbb"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_tyuq8"]
 [ext_resource type="PackedScene" uid="uid://dfah222300kmu" path="res://Scenes/Rocket/rocket.tscn" id="2_dglli"]
+[ext_resource type="Texture2D" uid="uid://gx0xeprtafqo" path="res://Sprites/Base/base_lancamento.png" id="2_ko6qr"]
 [ext_resource type="Script" path="res://Scenes/Camera/Camera2D.gd" id="3_cu80d"]
 [ext_resource type="Texture2D" uid="uid://da7eaux0i2vso" path="res://Sprites/Clouds/cloud1.png" id="4_g73j4"]
 [ext_resource type="Texture2D" uid="uid://de18gd6p630fo" path="res://Sprites/Clouds/cloud2.png" id="5_25okc"]
@@ -20,7 +21,7 @@ gradient = SubResource("Gradient_t3rp0")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6501x"]
-size = Vector2(4873, 142)
+size = Vector2(4873, 97)
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, -566)
@@ -44,15 +45,27 @@ position = Vector2(0, -1)
 offset_left = -4211.0
 offset_top = 590.0
 offset_right = 11342.0
-offset_bottom = 976.0
+offset_bottom = 697.0
 color = Color(0.215686, 0.588235, 0.203922, 1)
+
+[node name="GroundColor2" type="ColorRect" parent="World/Ground"]
+offset_left = -4211.0
+offset_top = 586.0
+offset_right = 11342.0
+offset_bottom = 599.0
+color = Color(0.132969, 0.378711, 0.124676, 1)
+
+[node name="BaseLancamento" type="Sprite2D" parent="World/Ground"]
+texture_filter = 1
+position = Vector2(490, 548)
+texture = ExtResource("2_ko6qr")
 
 [node name="GroundBody" type="StaticBody2D" parent="World/Ground"]
 position = Vector2(0, 600)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground/GroundBody"]
-position = Vector2(2436.5, 61)
+position = Vector2(2436.5, 45.5)
 shape = SubResource("RectangleShape2D_6501x")
 
 [node name="Clouds" type="Node2D" parent="World"]

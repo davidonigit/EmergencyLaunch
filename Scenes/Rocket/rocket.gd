@@ -55,6 +55,9 @@ func _on_accelaration_timer_timeout():
 
 
 func explode():
+	smoke_launch_particles.emitting = false
+	smoke_launch_particles_2.emitting = false
+	$SmokeAudio.stop()
 	$ExplosionAudio.play()
 	if engine_on:
 		$EngineAudio.stop()

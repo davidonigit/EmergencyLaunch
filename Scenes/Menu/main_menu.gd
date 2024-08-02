@@ -1,10 +1,16 @@
 extends Control
 
 @onready var animation_player = $AnimationPlayer
+@onready var highscore = $InitialMenu/TextureRect/Highscore
 
 
 func _ready():
 	AudioManager.music.play()
+	if GameController.highscore != 0:
+		highscore.text = str("highscore:\n",GameController.highscore," meters")
+	else:
+		highscore.hide()
+
 
 func _on_play_pressed():
 	AudioManager.click_sound.play()
