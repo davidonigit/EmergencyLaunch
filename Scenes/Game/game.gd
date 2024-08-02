@@ -67,6 +67,7 @@ func _on_gameover_timer_timeout():
 func explode_rocked(grounded:bool):
 	is_exploded = true
 	gameover_timer.stop()
+	$FiveSecondsTimer.stop()
 	rocket.explode()
 	var tween = create_tween()
 	tween.tween_property(camera, "zoom", Vector2(0.3,0.3), 1)
