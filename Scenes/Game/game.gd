@@ -51,6 +51,7 @@ func launch_rocket():
 	is_launched = true
 	engine_on = true
 	refuel.hide()
+	refuel.queue_free()
 	rocket.start_engine()
 
 
@@ -59,7 +60,6 @@ func _on_rocket_engine_off():
 
 
 func _on_gameover_timer_timeout():
-	refuel.hide()
 	alarm_timer.stop()
 	explode_rocked(false)
 
